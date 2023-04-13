@@ -11,7 +11,8 @@ const DataTable = async () => {                         //async function for
     const data=await d; 
     search(data);                                       //function for creating table at intial
     searchbutton.addEventListener("click",function(){   //function for searching and creating table with search parameter
-        search(data,input.value);
+        notTrash=false;
+        search(data,input.value,notTrash);
         input.value="";               
     })
     home.addEventListener("click",function(){           //function for searching and creating table with all data
@@ -28,7 +29,6 @@ function createtable(table,data,fordetele,notTrash=true){ //define a function to
     let thead = table.createTHead();
     let row = thead.insertRow();
     let headings = Object.keys(data[0]);
-    console.log(notTrash);
     for (let key of headings) {                           //for loop to create headings of tabel
         let th = document.createElement('th');
         th.innerHTML=key;                                 //heading is key of object
@@ -58,8 +58,9 @@ function createtable(table,data,fordetele,notTrash=true){ //define a function to
             deletbutton.addEventListener("click",function () {   //Adding delete function to button
                 deletedata.push(keys);
                 this.parentElement.parentElement.remove();
-                fordetele.splice(keys,1);
-                console.log(deletedata)
+                const found = data.find(key => key == keys);
+                fordetele.splice(found,1);
+                
             })
         }
     }

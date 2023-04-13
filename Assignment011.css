@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("Raleway-Regular.ttf");
+}
+:root{ /*variables*/
+    --backColor:rgb(227 227 227);
+    --header-color:#7fff00;
+    --text-color:rgb(134, 47, 255);
+}
+body{ 
+    font-family: "Raleway";
+    background-color: var(--backColor);
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 50px;
+}
+button{             /*styling for all button*/
+    background: white;
+    border: 0.5px solid var(--text-color);
+    width: 75px;
+    height: 50px;
+    margin: 5px 0px;
+    color: var(--text-color);
+}
+button:hover{
+    box-shadow: #959595 2px 2px 2px 2px;
+}
+input{
+    width: 300px;
+    height: 50px;
+    border: 0.5px solid gray;
+    outline: none;
+    border-radius: 10px;
+}
+table{
+    width: 100%;
+}
+.each-row{/* for every row expect the header row */
+    line-height: 30px;
+    margin: 5px 0px;
+    background-color: white;
+}
+.title{ /* each cell of a single row */
+    text-align: center;
+    padding: 0px 40px;
+}
+.headrow{/* for each cell of header row */
+    text-transform: uppercase;
+    line-height: 40px;
+    background-color: var(--header-color);
+}

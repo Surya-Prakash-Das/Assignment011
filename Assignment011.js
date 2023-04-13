@@ -58,8 +58,7 @@ function createtable(table,data,fordetele,notTrash=true){ //define a function to
             deletbutton.addEventListener("click",function () {   //Adding delete function to button
                 deletedata.push(keys);
                 this.parentElement.parentElement.remove();
-                const found = data.find(key => key == keys);
-                fordetele.splice(found,1);
+                fordetele.splice(keys,1);
                 
             })
         }

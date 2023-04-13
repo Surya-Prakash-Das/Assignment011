@@ -63,7 +63,12 @@ function createtable(table,data,fordetele,notTrash=true){ //define a function to
         }
     }
 }
-function search(data,text=" ",notTrash){ //define a function for searching if parameter is given else default parameter will be taken
+function search(data,text1="",notTrash){ //define a function for searching if parameter is given else default parameter will be taken
+    let text =text1.trim();
+    if(text==""){
+        text=" ";
+    }
+    
     if(table.firstChild){
         table.firstChild.remove();
     }

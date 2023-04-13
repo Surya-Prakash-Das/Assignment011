@@ -11,7 +11,8 @@ const DataTable = async () => {                         //async function for
     const data=await d; 
     search(data);                                       //function for creating table at intial
     searchbutton.addEventListener("click",function(){   //function for searching and creating table with search parameter
-        search(data,input.value);               
+        search(data,input.value);
+        input.value="";               
     })
     home.addEventListener("click",function(){           //function for searching and creating table with all data
         notTrash=true;
@@ -19,7 +20,7 @@ const DataTable = async () => {                         //async function for
     })
     trash.addEventListener("click",function(){          //function for searching and creating table with delete data
         notTrash=false;
-        search(deletedata,input.value,notTrash);
+        search(deletedata,input.value="",notTrash);
     })
 };
 let deletedata =[]; 
